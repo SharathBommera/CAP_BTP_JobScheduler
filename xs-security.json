@@ -1,0 +1,17 @@
+{
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.JOBSCHEDULER",
+      "description": "Allows SAP Job Scheduling to invoke the import action",
+      "grant-as-authority-to-apps": [
+        "$XSSERVICENAME(jobscheduler)"
+      ]
+    },
+    {
+      "name": "$XSAPPNAME.JOBSCHEDULER",
+      "description": "JOBSCHEDULER"
+    }
+  ],
+  "attributes": [],
+  "role-templates": []
+}

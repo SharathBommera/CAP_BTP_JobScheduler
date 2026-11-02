@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="ViewTest" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="ViewTest"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="NORTHWIND_IMPORTEDPRODUCTS">
+    <resourceUri>NORTHWIND_IMPORTEDPRODUCTS</resourceUri>
+  </DataSource>
+  <DataSource id="NORTHWIND_IMPORTEDPRODUCTS_1">
+    <resourceUri>NORTHWIND_IMPORTEDPRODUCTS</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="PRODUCTNAME"/>
+      <viewAttribute id="SUPPLIERID"/>
+      <viewAttribute id="CATEGORYID"/>
+      <viewAttribute id="QUANTITYPERUNIT"/>
+      <viewAttribute id="UNITPRICE"/>
+      <viewAttribute id="UNITSINSTOCK"/>
+      <viewAttribute hidden="true" id="JOIN$PRODUCTID$PRODUCTID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="NORTHWIND_IMPORTEDPRODUCTS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTNAME" source="PRODUCTNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPPLIERID" source="SUPPLIERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORYID" source="CATEGORYID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRODUCTID$PRODUCTID" source="PRODUCTID"/>
+    </input>
+    <input node="NORTHWIND_IMPORTEDPRODUCTS_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUANTITYPERUNIT" source="QUANTITYPERUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNITPRICE" source="UNITPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNITSINSTOCK" source="UNITSINSTOCK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRODUCTID$PRODUCTID" source="PRODUCTID"/>
+    </input>
+    <joinAttribute name="JOIN$PRODUCTID$PRODUCTID"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="PRODUCTNAME" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCTNAME"/>
+      <keyMapping columnObjectName="Join_1" columnName="PRODUCTNAME"/>
+    </attribute>
+    <attribute id="SUPPLIERID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUPPLIERID"/>
+      <keyMapping columnObjectName="Join_1" columnName="SUPPLIERID"/>
+    </attribute>
+    <attribute id="CATEGORYID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CATEGORYID"/>
+      <keyMapping columnObjectName="Join_1" columnName="CATEGORYID"/>
+    </attribute>
+    <attribute id="QUANTITYPERUNIT" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QUANTITYPERUNIT"/>
+      <keyMapping columnObjectName="Join_1" columnName="QUANTITYPERUNIT"/>
+    </attribute>
+    <attribute id="UNITPRICE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UNITPRICE"/>
+      <keyMapping columnObjectName="Join_1" columnName="UNITPRICE"/>
+    </attribute>
+    <attribute id="UNITSINSTOCK" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UNITSINSTOCK"/>
+      <keyMapping columnObjectName="Join_1" columnName="UNITSINSTOCK"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="198"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="NORTHWIND_IMPORTEDPRODUCTS" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="NORTHWIND_IMPORTEDPRODUCTS" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
